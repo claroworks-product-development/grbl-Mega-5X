@@ -154,25 +154,25 @@
   #define STEP_PORT_1 F
   #define STEP_PORT_2 L
   #if N_AXIS > 3
-    #define STEP_PORT_3 A // Axis number 4 (Ramps E0)
+    #define STEP_PORT_3 L // Axis number 4 (Ramps E0) //was A before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #if N_AXIS > 4
     #define STEP_PORT_4 C // Axis number 5 (Ramps E1)
   #endif
   #if N_AXIS > 5
-    #define STEP_PORT_5 L // Axis number 6 (Ramps Aux-3 D49)
+    #define STEP_PORT_5 A // Axis number 6 (Ramps Aux-3 D49) //was L before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #define STEP_BIT_0 0  // X Step - Pin A0
   #define STEP_BIT_1 6  // Y Step - Pin A6
   #define STEP_BIT_2 3  // Z Step - Pin D46
   #if N_AXIS > 3
-    #define STEP_BIT_3 4 // Axis number 4 Step - Pin D26
+    #define STEP_BIT_3 0 // Axis number 4 Step - Pin D26 //was 4 before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #if N_AXIS > 4
     #define STEP_BIT_4 1 // Axis number 5 Step - Pin D36
   #endif
   #if N_AXIS > 5
-    #define STEP_BIT_5 0 // Axis number 6 Step - Pin D49
+    #define STEP_BIT_5 4 // Axis number 6 Step - Pin D49 //was 0 before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #define _STEP_BIT(i) STEP_BIT_##i
   #define STEP_BIT(i) _STEP_BIT(i)
@@ -186,25 +186,25 @@
   #define DIRECTION_PORT_1 F
   #define DIRECTION_PORT_2 L
   #if N_AXIS > 3
-    #define DIRECTION_PORT_3 A // Axis number 4 (Ramps E0)
+    #define DIRECTION_PORT_3 B // Axis number 4 (Ramps E0) //was A before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #if N_AXIS > 4
     #define DIRECTION_PORT_4 C // Axis number 5 (Ramps E1)
   #endif
   #if N_AXIS > 5
-    #define DIRECTION_PORT_5 B // Axis number 6 (Ramps Aux-3 D51)
+    #define DIRECTION_PORT_5 A // Axis number 6 (Ramps Aux-3 D51) //was B before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #define DIRECTION_BIT_0 1 // X Dir - Pin A1
   #define DIRECTION_BIT_1 7 // Y Dir - Pin A7
   #define DIRECTION_BIT_2 1 // Z Dir - Pin D48
   #if N_AXIS > 3
-    #define DIRECTION_BIT_3 6 // Axis number 4 Step - Pin D28
+    #define DIRECTION_BIT_3 2 // Axis number 4 Step - Pin D28 //was 6 before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #if N_AXIS > 4
     #define DIRECTION_BIT_4 3 // Axis number 5 Step - Pin D34
   #endif
   #if N_AXIS > 5
-    #define DIRECTION_BIT_5 2 // Axis number 6 Step - Pin D51
+    #define DIRECTION_BIT_5 6 // Axis number 6 Step - Pin D51 //was 2 before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #define _DIRECTION_BIT(i) DIRECTION_BIT_##i
   #define DIRECTION_BIT(i) _DIRECTION_BIT(i)
@@ -218,25 +218,25 @@
   #define STEPPER_DISABLE_PORT_1 F
   #define STEPPER_DISABLE_PORT_2 K
   #if N_AXIS > 3
-    #define STEPPER_DISABLE_PORT_3 A // Axis number 4 (Ramps E0)
+    #define STEPPER_DISABLE_PORT_3 B // Axis number 4 (Ramps E0) //was A before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #if N_AXIS > 4
     #define STEPPER_DISABLE_PORT_4 C // Axis number 5 (Ramps E1)
   #endif
   #if N_AXIS > 5
-    #define STEPPER_DISABLE_PORT_5 B // Axis number 5 (Ramps Aux-3 D53)
+    #define STEPPER_DISABLE_PORT_5 A // Axis number 6 (Ramps Aux-3 D53) //was B before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #define STEPPER_DISABLE_BIT_0 7 // X Enable - Pin D38
   #define STEPPER_DISABLE_BIT_1 2 // Y Enable - Pin A2
   #define STEPPER_DISABLE_BIT_2 0 // Z Enable - Pin A8
   #if N_AXIS > 3
-    #define STEPPER_DISABLE_BIT_3 2 // Axis number 4 Step - Pin D24
+    #define STEPPER_DISABLE_BIT_3 0 // Axis number 4 Step - Pin D24 //was 2 before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #if N_AXIS > 4
     #define STEPPER_DISABLE_BIT_4 7 // Axis number 5 Step - Pin D30
   #endif
   #if N_AXIS > 5
-    #define STEPPER_DISABLE_BIT_5 0 // Axis number 5 Step - Pin D53
+    #define STEPPER_DISABLE_BIT_5 2 // Axis number 6 Step - Pin D53 //was 0 before swap EO position From Axis A To Axis C stepper driver location
   #endif
   #define STEPPER_DISABLE_BIT(i) STEPPER_DISABLE_BIT_##i
   #define STEPPER_DISABLE_DDR(i) _DDR(STEPPER_DISABLE_PORT_##i)
@@ -245,28 +245,28 @@
 
   // Define homing/hard limit switch input pins and limit interrupt vectors.
   #define MIN_LIMIT_PORT_0 E
-  #define MIN_LIMIT_PORT_1 J
-  #define MIN_LIMIT_PORT_2 D
+  #define MIN_LIMIT_PORT_1 E //was J
+  #define MIN_LIMIT_PORT_2 J //was D
   #if N_AXIS > 3
-    #define MIN_LIMIT_PORT_3 L
+    #define MIN_LIMIT_PORT_3 J //was L
   #endif
   #if N_AXIS > 4
-    #define MIN_LIMIT_PORT_4 L
+    #define MIN_LIMIT_PORT_4 D //was L
   #endif
   #if N_AXIS > 5
-    #define MIN_LIMIT_PORT_5 F // (Ramps Aux-1 D57)
+    #define MIN_LIMIT_PORT_5 D // was F
   #endif
   #define MIN_LIMIT_BIT_0 5 // X Limit Min - Pin D3
-  #define MIN_LIMIT_BIT_1 1 // Y Limit Min - Pin D14
-  #define MIN_LIMIT_BIT_2 3 // Z Limit Min - Pin D18
+  #define MIN_LIMIT_BIT_1 4 // Y Limit Min - D2 //was 1 = Pin D14
+  #define MIN_LIMIT_BIT_2 1 // Z Limit Min - D14 // was 3 = Pin D18
   #if N_AXIS > 3
-    #define MIN_LIMIT_BIT_3 7 // Axis number 4 : RAMPS AUX2 pin D42
+    #define MIN_LIMIT_BIT_3 0 // A/4 Limit Min - D15// was 7 = Pin D42
   #endif
   #if N_AXIS > 4
-    #define MIN_LIMIT_BIT_4 5 // Axis number 5 : RAMPS AUX2 pin D44
+    #define MIN_LIMIT_BIT_4 3 // B/5 Limit Min - D18 // was 5 =  pin D44
   #endif
   #if N_AXIS > 5
-    #define MIN_LIMIT_BIT_5 3 // Axis number 6 : RAMPS AUX2 pin D57
+    #define MIN_LIMIT_BIT_5 2 // C/6 Limit Min - D19 // Was 3 = pin D57
   #endif
   #define _MIN_LIMIT_BIT(i) MIN_LIMIT_BIT_##i
   #define MIN_LIMIT_BIT(i) _MIN_LIMIT_BIT(i)
@@ -274,29 +274,29 @@
   #define MIN_LIMIT_PORT(i) _PORT(MIN_LIMIT_PORT_##i)
   #define MIN_LIMIT_PIN(i) _PIN(MIN_LIMIT_PORT_##i)
 
-  #define MAX_LIMIT_PORT_0 E
-  #define MAX_LIMIT_PORT_1 J
-  #define MAX_LIMIT_PORT_2 D
+  #define MAX_LIMIT_PORT_0 L //was E
+  #define MAX_LIMIT_PORT_1 G //was J
+  #define MAX_LIMIT_PORT_2 L //was D
   #if N_AXIS > 3
-    #define MAX_LIMIT_PORT_3 G
+    #define MAX_LIMIT_PORT_3 F //was G
   #endif
   #if N_AXIS > 4
-    #define MAX_LIMIT_PORT_4 F
+    #define MAX_LIMIT_PORT_4 F // Was F
   #endif
   #if N_AXIS > 5
-    #define MAX_LIMIT_PORT_5 F // (Ramps Aux-3 D58)
+    #define MAX_LIMIT_PORT_5 F // Was F 
   #endif
-  #define MAX_LIMIT_BIT_0 4 // X Limit Max - Pin D2
-  #define MAX_LIMIT_BIT_1 0 // Y Limit Max - Pin D15
-  #define MAX_LIMIT_BIT_2 2 // Z Limit Max - Pin D19
+  #define MAX_LIMIT_BIT_0 7 // X Limit Max - D42 //was 4 - Pin D2
+  #define MAX_LIMIT_BIT_1 1 // Y Limit Max - D40 //was 0 - Pin D15
+  #define MAX_LIMIT_BIT_2 5 // Z Limit Max - D44 //was 2 - Pin D19
   #if N_AXIS > 3
-    #define MAX_LIMIT_BIT_3 1 // Axis number 4 : RAMPS AUX2 pin D40
+    #define MAX_LIMIT_BIT_3 5 // A/4 Limit Max - D59 //was 1 - D40
   #endif
   #if N_AXIS > 4
-    #define MAX_LIMIT_BIT_4 5 // Axis number 5 : RAMPS AUX2 pin D59
+    #define MAX_LIMIT_BIT_4 3 // B/5 Limit Max - D57 // was 5 - D59
   #endif
   #if N_AXIS > 5
-    #define MAX_LIMIT_BIT_5 4 // Axis number 6 : RAMPS AUX2 pin D58
+    #define MAX_LIMIT_BIT_5 4 // C/6 Limit Max - D58 // was 4 - D58
   #endif
   #define _MAX_LIMIT_BIT(i) MAX_LIMIT_BIT_##i
   #define MAX_LIMIT_BIT(i) _MAX_LIMIT_BIT(i)
@@ -319,13 +319,15 @@
   #define SPINDLE_DIRECTION_BIT   3 // MEGA2560 Digital Pin 5 - Ramps 1.4 Servo 3 Signal pin (D5)
 
   // Define flood and mist coolant enable output pins.
-  #define COOLANT_FLOOD_DDR   DDRB
-  #define COOLANT_FLOOD_PORT  PORTB
-  #define COOLANT_FLOOD_BIT   4 // MEGA2560 Digital Pin 10 - Ramps 1.4 12v output
-  #define COOLANT_MIST_DDR    DDRH
-  #define COOLANT_MIST_PORT   PORTH
-  #define COOLANT_MIST_BIT    6 // MEGA2560 Digital Pin 9 - Ramps 1.4 12v output
+ #define COOLANT_FLOOD_DDR   DDRB
+ #define COOLANT_FLOOD_PORT  PORTB
+ #define COOLANT_FLOOD_BIT   4 // MEGA2560 Digital Pin 10 - Ramps 1.4 12v output
+ #define COOLANT_MIST_DDR    DDRH
+ #define COOLANT_MIST_PORT   PORTH
+ #define COOLANT_MIST_BIT    6 // MEGA2560 Digital Pin 9 - Ramps 1.4 12v output
 
+
+ 
   // Define user-control CONTROLs (cycle start, reset, feed hold) input pins.
   // NOTE: All CONTROLs pins must be on the same port and not on a port with other input pins (limits).
   #define CONTROL_DDR       DDRK

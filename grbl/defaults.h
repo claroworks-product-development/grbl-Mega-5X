@@ -454,35 +454,35 @@
 #endif
 
 #ifdef DEFAULTS_RAMPS_BOARD
-  #define DEFAULT_AXIS1_STEPS_PER_UNIT 80
-  #define DEFAULT_AXIS2_STEPS_PER_UNIT 80
-  #define DEFAULT_AXIS3_STEPS_PER_UNIT 4000
-  #define DEFAULT_AXIS1_MAX_RATE 9000.0 // 9000 mm/min = 9000/60 = 150 mm/sec
-  #define DEFAULT_AXIS2_MAX_RATE 9000.0 // 9000 mm/min = 9000/60 = 150 mm/sec
-  #define DEFAULT_AXIS3_MAX_RATE 300.0  //  300 mm/min =  300/60 =   5 mm/sec
-  #define DEFAULT_AXIS1_ACCELERATION (300.0*60*60) // 300*60*60 mm/min^2 = 300 mm/sec^2
-  #define DEFAULT_AXIS2_ACCELERATION (300.0*60*60) // 300*60*60 mm/min^2 = 300 mm/sec^2
-  #define DEFAULT_AXIS3_ACCELERATION (100.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
-  #define DEFAULT_AXIS1_MAX_TRAVEL 200.0 // mm
-  #define DEFAULT_AXIS2_MAX_TRAVEL 200.0 // mm
-  #define DEFAULT_AXIS3_MAX_TRAVEL 200.0 // mm
+  #define DEFAULT_AXIS1_STEPS_PER_UNIT 25.027
+  #define DEFAULT_AXIS2_STEPS_PER_UNIT 40.772
+  #define DEFAULT_AXIS3_STEPS_PER_UNIT 2.222
+  #define DEFAULT_AXIS1_MAX_RATE 20000.0 // 9000 mm/min = 9000/60 = 150 mm/sec
+  #define DEFAULT_AXIS2_MAX_RATE 80000.0 // 9000 mm/min = 9000/60 = 150 mm/sec
+  #define DEFAULT_AXIS3_MAX_RATE 4000.0  //  300 mm/min =  300/60 =   5 mm/sec
+  #define DEFAULT_AXIS1_ACCELERATION (1000.0*60*60) // 300*60*60 mm/min^2 = 300 mm/sec^2
+  #define DEFAULT_AXIS2_ACCELERATION (4000.0*60*60) // 300*60*60 mm/min^2 = 300 mm/sec^2
+  #define DEFAULT_AXIS3_ACCELERATION (2000.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
+  #define DEFAULT_AXIS1_MAX_TRAVEL 1000.0 // mm
+  #define DEFAULT_AXIS2_MAX_TRAVEL 1000.0 // mm
+  #define DEFAULT_AXIS3_MAX_TRAVEL 1000.0 // mm
   #if N_AXIS > 3
-    #define DEFAULT_AXIS4_STEPS_PER_UNIT 8.888889 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
-    #define DEFAULT_AXIS4_MAX_RATE 1440 // °/mn
-    #define DEFAULT_AXIS4_ACCELERATION (100.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
+    #define DEFAULT_AXIS4_STEPS_PER_UNIT 40.772 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
+    #define DEFAULT_AXIS4_MAX_RATE 80000.0 // °/mn
+    #define DEFAULT_AXIS4_ACCELERATION (4000.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
     #define DEFAULT_AXIS4_MAX_TRAVEL 360.0 // °
   #endif
   #if N_AXIS > 4
-    #define DEFAULT_AXIS5_STEPS_PER_UNIT 8.888889 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
-    #define DEFAULT_AXIS5_MAX_RATE 1440 // °/mn
-    #define DEFAULT_AXIS5_ACCELERATION (100.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
-    #define DEFAULT_AXIS5_MAX_TRAVEL 180.0 // °
+    #define DEFAULT_AXIS5_STEPS_PER_UNIT 40.772 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
+    #define DEFAULT_AXIS5_MAX_RATE 80000.0 // °/mn
+    #define DEFAULT_AXIS5_ACCELERATION (4000.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
+    #define DEFAULT_AXIS5_MAX_TRAVEL 360.0 // °
   #endif
   #if N_AXIS > 5
-    #define DEFAULT_AXIS6_STEPS_PER_UNIT 8.888889 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
-    #define DEFAULT_AXIS6_MAX_RATE 1440 // °/mn
-    #define DEFAULT_AXIS6_ACCELERATION (100.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
-    #define DEFAULT_AXIS6_MAX_TRAVEL 180.0 // °
+    #define DEFAULT_AXIS6_STEPS_PER_UNIT 40.772 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
+    #define DEFAULT_AXIS6_MAX_RATE 80000.0 // °/mn
+    #define DEFAULT_AXIS6_ACCELERATION (4000.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
+    #define DEFAULT_AXIS6_MAX_TRAVEL 360.0 // °
   #endif
   #define DEFAULT_SPINDLE_RPM_MAX 1000.0 // rpm
   #define DEFAULT_SPINDLE_RPM_MIN 0.0 // rpm
@@ -496,16 +496,16 @@
   #define DEFAULT_REPORT_INCHES 0 // false
   #define DEFAULT_INVERT_ST_ENABLE 0 // false
   #define DEFAULT_INVERT_LIMIT_PINS 0 // false
-  #define DEFAULT_SOFT_LIMIT_ENABLE 1 // true
-  #define DEFAULT_HARD_LIMIT_ENABLE 0  // false
+  #define DEFAULT_SOFT_LIMIT_ENABLE 0 // true
+  #define DEFAULT_HARD_LIMIT_ENABLE 1  // false
   #define DEFAULT_INVERT_PROBE_PIN 0 // false
   #define DEFAULT_LASER_MODE 0 // false
   #define DEFAULT_HOMING_ENABLE 1  // true
-  #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
-  #define DEFAULT_HOMING_FEED_RATE 500.0 // mm/min
-  #define DEFAULT_HOMING_SEEK_RATE 2000.0 // mm/min
+  #define DEFAULT_HOMING_DIR_MASK 1 // move positive dir
+  #define DEFAULT_HOMING_FEED_RATE 25.0 // mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 500.0 // mm/min
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
-  #define DEFAULT_HOMING_PULLOFF 5.0 // mm
+  #define DEFAULT_HOMING_PULLOFF 1.0 // mm
 #endif
 
 #endif
