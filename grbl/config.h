@@ -156,12 +156,12 @@
     #define HOMING_CYCLE_3 (1<<AXIS_2) // Home Y axis
     #define HOMING_CYCLE_4 (1<<AXIS_3) // OPTIONAL: Home Z axis
   #elif N_AXIS == 6 // 6 axis : homing
-    #define HOMING_CYCLE_0 (1<<AXIS_4) // Home 4th axis (A)
-    #define HOMING_CYCLE_1 (1<<AXIS_5) // Home 5th axis (B)
-    #define HOMING_CYCLE_2 (1<<AXIS_6) // Home 6th axis (C)
-    #define HOMING_CYCLE_3 (1<<AXIS_1) // Home X axis
-    #define HOMING_CYCLE_4 (1<<AXIS_2) // Home Y axis
-    #define HOMING_CYCLE_5 (1<<AXIS_3) // OPTIONAL: Home Z axis
+    #define HOMING_CYCLE_0 (1<<AXIS_3) // Home Z Axis
+    #define HOMING_CYCLE_1 (1<<AXIS_1) // Home X
+    #define HOMING_CYCLE_2 (1<<AXIS_5) // Home B
+    #define HOMING_CYCLE_3 (1<<AXIS_6) // Home C
+   // #define HOMING_CYCLE_4 (1<<AXIS_2) // Home Y axis
+    //#define HOMING_CYCLE_5 (1<<AXIS_3) // OPTIONAL: Home Z axis
   #else // Classic 3 axis
     #define HOMING_CYCLE_0 (1<<AXIS_1) // Home X axis
     #define HOMING_CYCLE_1 (1<<AXIS_2) // Home Y axis
@@ -193,7 +193,7 @@
 // After homing, Grbl will set by default the entire machine space into negative space, as is typical
 // for professional CNC machines, regardless of where the limit switches are located. Uncomment this
 // define to force Grbl to always set the machine origin at the homed location despite switch orientation.
-// #define HOMING_FORCE_SET_ORIGIN // Uncomment to enable.
+ #define HOMING_FORCE_SET_ORIGIN // Uncomment to enable.
 
 // Number of blocks Grbl executes upon startup. These blocks are stored in EEPROM, where the size
 // and addresses are defined in settings.h. With the current settings, up to 2 startup blocks may
@@ -263,6 +263,7 @@
 #ifdef DEFAULTS_RAMPS_BOARD
   // Only enable the following line if you have - (min) limit switches attached
   //#define INVERT_MIN_LIMIT_PIN_MASK ((1<<AXIS_1) | (1<<AXIS_2) | (1<<AXIS_3))
+  #define INVERT_MIN_LIMIT_PIN_MASK ((1<<AXIS_1))
   // Only enable the following line if you have + (max) limit switches attached
   //#define INVERT_MAX_LIMIT_PIN_MASK ((1<<AXIS_1) | (1<<AXIS_2) | (1<<AXIS_3))
 #endif
